@@ -56,7 +56,7 @@ class JournalControllerTest {
         ResponseEntity<Page<JournalEntryListDTO>> resp = controller.listJournal(params, incoming);
 
         // Assert
-        assertEquals(200, resp.getStatusCodeValue());
+        assertEquals(200, resp.getStatusCode().value());
         ArgumentCaptor<Pageable> pageableCaptor = ArgumentCaptor.forClass(Pageable.class);
         verify(service).list(
                 eq(params.getDateFrom()),
@@ -106,7 +106,7 @@ class JournalControllerTest {
         ResponseEntity<Page<JournalEntryListDTO>> resp = controller.listJournal(params, incoming);
 
         // Assert
-        assertEquals(200, resp.getStatusCodeValue());
+        assertEquals(200, resp.getStatusCode().value());
         ArgumentCaptor<Pageable> pageableCaptor = ArgumentCaptor.forClass(Pageable.class);
         verify(service).list(
                 eq(params.getDateFrom()),
